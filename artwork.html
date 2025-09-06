@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .font-lora { font-family: 'Lora', serif; }
+        .font-spline { font-family: 'Spline Sans', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-[url('./wood%20light%201.jpg')] bg-cover bg-center min-h-screen">
+    <header class="w-full h-[70px] bg-white/40 flex items-center justify-between px-6 mx-auto">
+        <div class="w-10 h-10 bg-gray-400"></div>
+            <h1 class="font-lora font-semibold text-[24px] text-[#1C2A44]">
+                the canvas project
+            </h1>
+        <a href="./index.html">
+        <button class="font-spline font-bold text-[15px] text-[#FFFFFF] px-5 py-2 
+                    rounded-full bg-[#BAB86C]/60 
+                    hover:bg-[#BAB86C] hover:shadow-md transition">
+                home
+        </button>
+        </a>
+    </header>
+    <div id="artwork-detail" class="max-w-[1440px] mx-auto px-6 py-8">
     
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
