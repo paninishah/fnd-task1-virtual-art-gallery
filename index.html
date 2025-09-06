@@ -11,7 +11,7 @@
     .font-spline { font-family: 'Spline Sans', sans-serif; }
   </style>
 </head>
-<body class="bg-[url('./wood%20light%201.jpg')] bg-cover bg-center min-h-screen">
+<body class="bg-[url('./wood%20light%201.jpg')] bg-cover bg-center bg-fixed min-h-screen">
     <header class="w-full h-[70px] bg-white/40 flex items-center justify-between px-6 mx-auto">
         <div class="w-10 h-10 bg-gray-400"></div>
         <h1 class="font-lora font-semibold text-[24px] text-[#1C2A44]">
@@ -30,14 +30,14 @@
             <input 
             type="text" 
             placeholder="search for something" 
-            class="w-full h-full rounded-full bg-white/40 px-4 pr-10 
+            class="search-input w-full h-full rounded-full bg-white/40 px-4 pr-10 
                     text-[15px] italic font-['Open_Sans'] 
                     placeholder:text-[#1E1E1E]/45 focus:outline-none" 
             />
             <img 
             src="./search-icon.png" 
             alt="search" 
-            class="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 opacity-40 hover:opacity-100 transition"
+            class="search-btn absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 opacity-40 hover:opacity-100 transition cursor-pointer"
             />
         </div>
     </div>
