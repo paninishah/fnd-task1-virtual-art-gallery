@@ -29,8 +29,8 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                 card.innerHTML = `
                     <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
                     <div class="p-2 text-center">
-                        <h3 class="font-lora font-semibold text-sm text-[#1C2A44] truncate">${item.title || 'Untitled'}</h3>
-                        <p class="text-xs text-[#1C2A44]/70 truncate">${item.people?.[0]?.name || 'Unknown Artist'}</p>
+                        <h3 class="font-lora font-semibold text-sm text-[#1C2A44] break-words">${item.title || 'Untitled'}</h3>
+                        <p class="text-xs text-[#1C2A44]/70 break-words">${item.people?.[0]?.name || 'Unknown Artist'}</p>
                     </div>
                 `;
 
@@ -62,11 +62,11 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                 validArtworks.slice(0, numberOfCards).forEach(item => {
                     const card = document.createElement('div');
                     card.className =
-                        "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center justify-center text-[#1C2A44]/50 font-spline overflow-hidden";
-
+                        "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center text-[#1C2A44]/50 font-spline overflow-hidden";
+                    //why doesnt the image stick to the top???
                     card.innerHTML = `
                         <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
-                        <div class="p-2 text-center">
+                        <div class="pt-0 pb-2 text-center">
                             <h3 class="font-lora font-semibold text-sm text-[#1C2A44] truncate">${item.title || 'Untitled'}</h3>
                             <p class="text-xs text-[#1C2A44]/70 truncate">${item.people?.[0]?.name || 'Unknown Artist'}</p>
                         </div>
