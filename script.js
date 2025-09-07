@@ -28,7 +28,7 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
 
                 card.innerHTML = `
                     <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
-                    <div class="p-2 text-center">
+                    <div class="pt-0 pb-2 text-center">
                         <h3 class="font-lora font-semibold text-sm text-[#1C2A44] break-words">${item.title || 'Untitled'}</h3>
                         <p class="text-xs text-[#1C2A44]/70 break-words">${item.people?.[0]?.name || 'Unknown Artist'}</p>
                     </div>
@@ -67,8 +67,8 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                     card.innerHTML = `
                         <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
                         <div class="pt-0 pb-2 text-center">
-                            <h3 class="font-lora font-semibold text-sm text-[#1C2A44] truncate">${item.title || 'Untitled'}</h3>
-                            <p class="text-xs text-[#1C2A44]/70 truncate">${item.people?.[0]?.name || 'Unknown Artist'}</p>
+                            <h3 class="font-lora font-semibold text-sm text-[#1C2A44] break-words">${item.title || 'Untitled'}</h3>
+                            <p class="text-xs text-[#1C2A44]/70 break-words">${item.people?.[0]?.name || 'Unknown Artist'}</p>
                         </div>
                     `;
 
