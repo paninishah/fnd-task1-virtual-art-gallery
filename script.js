@@ -24,7 +24,7 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
             validArtworks.slice(0, numberOfCards).forEach(item => {
                 const card = document.createElement('div');
                 card.className =
-                    "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center justify-center text-[#1C2A44]/50 font-spline overflow-hidden";
+                    "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-centerSS text-[#1C2A44]/50 font-spline overflow-hidden gap-6";
 
                 card.innerHTML = `
                     <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
@@ -62,8 +62,7 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                 validArtworks.slice(0, numberOfCards).forEach(item => {
                     const card = document.createElement('div');
                     card.className =
-                        "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center text-[#1C2A44]/50 font-spline overflow-hidden";
-                    //why doesnt the image stick to the top???
+                        "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center text-[#1C2A44]/50 font-spline overflow-hidden gap-6";
                     card.innerHTML = `
                         <img src="${item.primaryimageurl}" alt="${item.title}" class="w-full h-[70%] object-cover">
                         <div class="pt-0 pb-2 text-center">
