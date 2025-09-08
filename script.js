@@ -1,12 +1,12 @@
 const apiKey = '4b520844-87f0-4b8e-bb0d-e0284ceef1de';
-const gallery = document.querySelector('.gallery');
-const path = window.location.pathname;
+const gallery = document.querySelector('.gallery');//cause class is named gallery in index
+const path = window.location.pathname;//so i can put all logic in one file
 
 
 if (path.endsWith('index.html') || path === '/' || path === '') {
-    const randomPage = Math.floor(Math.random() * 100) + 1; // pick random page 
+    const randomPage = Math.floor(Math.random() * 100) + 1; // pick random page EXPLAIN
     const numberOfCards = 12;
-    const fetchSize = 50;
+    const fetchSize = 50;//so i can only include artworks that have images; a pool to choose from
 
     //random gallery
     fetch(`https://api.harvardartmuseums.org/object?apikey=${apiKey}&size=${fetchSize}&page=${randomPage}&hasimage=1&classification=Paintings`)
@@ -14,7 +14,7 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
         .then(data => {
             let validArtworks = data.records.filter(item => item.primaryimageurl);
 
-            // shuffle them (Fisher–Yates)
+            // shuffle them using fisher-yates -- new stuff EXPLAIN
             for (let i = validArtworks.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [validArtworks[i], validArtworks[j]] = [validArtworks[j], validArtworks[i]];
@@ -35,13 +35,12 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                 `;
 
                 const link = document.createElement('a');
-                link.href = `artwork.html?id=${item.id}`;
+                link.href = `artwork.html?id=${item.id}`;//artwork id is passed in url
                 link.appendChild(card);
 
                 gallery.appendChild(link);
             });
         })
-        .catch(err => console.error('Error fetching artworks:', err));
 
     //search
     const searchInput = document.querySelector('.search-input');
@@ -55,11 +54,11 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                 const validArtworks = data.records.filter(item => item.primaryimageurl);
 
                 if (validArtworks.length === 0) {
-                    gallery.innerHTML = `<p class="text-white">No results found for "${query}".</p>`;
+                    gallery.innerHTML = `<p class="text-white">sorry, we dont have paintings related to "${query}".</p>`;
                     return;
                 }
 
-                validArtworks.slice(0, numberOfCards).forEach(item => {
+                validArtworks.slice(0, numberOfCards).forEach(item => {//same as before
                     const card = document.createElement('div');
                     card.className =
                         "w-[300px] h-[400px] bg-[#D9D9D9] border-[7px] border-[#C76A4E] transition-shadow duration-300 hover:shadow-[0_0_40px_#1C2A44] flex flex-col items-center text-[#1C2A44]/50 font-spline overflow-hidden gap-6";
@@ -78,10 +77,9 @@ if (path.endsWith('index.html') || path === '/' || path === '') {
                     gallery.appendChild(link);
                 });
             })
-            .catch(err => console.error('Search error:', err));
     }
 
-
+    //can search by clicking button or pressing enter
     searchBtn.addEventListener('click', () => {
         const query = searchInput.value.trim();
         if (query) searchArtworks(query);
@@ -121,9 +119,5 @@ else if (path.endsWith('artwork.html')) {
           </div>
         `;
       })
-       .catch(err => {
-        container.innerHTML = `<p class="text-white">Error loading artwork.</p>`;
-        console.error(err);
-      });
   }
 }
