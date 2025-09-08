@@ -1,3 +1,3 @@
-# fnd-task1-virtual-art-gallery
+# the-canvas-project
 
-https://paninishah.github.io/fnd-task1-virtual-art-gallery/index.html 
+https://paninishah.github.io/the-canvas-project/index.html 
